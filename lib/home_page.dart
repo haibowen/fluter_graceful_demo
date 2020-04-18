@@ -185,13 +185,31 @@ class HomePage extends StatelessWidget {
                           decoration: TextDecoration.underline),
                     ),
                     onTap: () {
-                      showDialog(context: context,builder: (context){
-                        return AlertDialog(
-                          title: Text(''),
-                          content: Text('地址'),
-
-                        );
-                      });
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                                title: Text('flutter学习记录'),
+                                content: Container(
+                                  alignment: Alignment.centerLeft,
+                                  height: 60,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        '项目地址:',
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                      Text(
+                                        'https://github.com/haibowen/fluter_graceful_demo',
+                                        style: TextStyle(fontSize: 14),
+                                      ),
+                                    ],
+                                  ),
+                                ));
+                          });
                     },
                   ))
                 ],
