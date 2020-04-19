@@ -5,6 +5,25 @@ import 'login/page_login_card.dart';
 import 'login/page_login_self.dart';
 import 'main.dart';
 
+//层叠的背景图片数组
+List<dynamic> backgroundImageList = [
+  'images/unnamed.jpg',
+  'images/test.jpg',
+  'images/show_something.jpg',
+  'images/login.jpg',
+  'images/center.jpg',
+  'images/app_logo.jpg'
+];
+//层叠显示的icon
+List<IconData> iconShowList = [
+  Icons.camera,
+  Icons.filter,
+  Icons.photo_library,
+  Icons.photo,
+  Icons.fiber_new,
+  Icons.book
+];
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,7 +38,7 @@ class HomePage extends StatelessWidget {
           flexibleSpace: FlexibleSpaceBar(
             title: Text('Graceful Demo'),
             background: new Image.asset(
-              "images/app_logo.jpg",
+              "images/show_something.jpg",
               fit: BoxFit.fill,
             ),
           ),
@@ -33,62 +52,67 @@ class HomePage extends StatelessWidget {
           ),
           delegate:
               SliverChildBuilderDelegate((BuildContext context, int index) {
-            return Card(
-              child: Stack(
-                fit: StackFit.expand,
-                children: <Widget>[
-                  Image.asset(
-                    'images/app_logo.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                  Container(
-                      constraints: BoxConstraints.expand(),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.circular(5),
-                          gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.topRight,
-                            colors: [
-                              Colors.deepPurpleAccent.withOpacity(0.5),
-                              Colors.purple.withOpacity(0.5)
-                            ],
-                          )
+            return Card(child: showItemType(context, index));
+          }, childCount: 5),
+        ),
+      ],
+    );
+  }
+
+  //层叠的显示效果
+  Widget showItemType(context, index) {
+    return Stack(
+      fit: StackFit.expand,
+      children: <Widget>[
+        ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            backgroundImageList[index],
+            fit: BoxFit.fill,
+          ),
+        ),
+        Container(
+            constraints: BoxConstraints.expand(),
+            decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(5),
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.topRight,
+                  colors: [
+                    Colors.deepPurpleAccent.withOpacity(0.5),
+                    Colors.purple.withOpacity(0.5)
+                  ],
+                )
 //                            gradient: RadialGradient(
 //                              //背景径向渐变
 //                                colors: [Colors.purple, Colors.deepPurpleAccent],
 //                                center: Alignment.center,
 //                                radius: .78),
-                          ),
-                      alignment: Alignment.center,
-                      child: InkWell(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(
-                              Icons.filter,
-                              size: 42,
-                              color: Colors.white,
-                            ),
-                            Text(
-                              typePage[index],
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontFamily: 'Montserrat',
-                              ),
-                            ),
-                          ],
-                        ),
-                        onTap: () {
-                          showBottomMenu(context);
-                        },
-                      )),
+                ),
+            alignment: Alignment.center,
+            child: InkWell(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    iconShowList[index],
+                    size: 38,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    typePage[index],
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
+                  ),
                 ],
               ),
-            );
-          }, childCount: 5),
-        ),
+              onTap: () {
+                showBottomMenu(context);
+              },
+            )),
       ],
     );
   }
