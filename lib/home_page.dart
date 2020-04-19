@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteruidemo/customer_error_page.dart';
+import 'package:flutteruidemo/login/page_login_offset.dart';
 
 import 'login/page_login_card.dart';
 import 'login/page_login_self.dart';
@@ -12,7 +13,7 @@ List<Widget> pageShowRoute = [
   PageLoginCard(),
 ];
 Map<String, List<Widget>> mapShowWidget = {
-  'login': [PageShowSelf(), PageLoginCard()]
+  'login': [PageShowSelf(), PageLoginCard(),PageLoginOffset()]
 };
 //层叠的背景图片数组
 List<dynamic> backgroundImageList = [
