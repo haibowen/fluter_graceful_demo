@@ -1,10 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutteruidemo/customer_error_page.dart';
 
 import 'login/page_login_card.dart';
 import 'login/page_login_self.dart';
 import 'main.dart';
 
+//展示的页面
+List<Widget> pageShowRoute = [
+  PageShowSelf(),
+  PageLoginCard(),
+];
+Map<String, List<Widget>> mapShowWidget = {
+  'login': [PageShowSelf(), PageLoginCard()]
+};
 //层叠的背景图片数组
 List<dynamic> backgroundImageList = [
   'images/unnamed.jpg',
@@ -97,7 +106,7 @@ class HomePage extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     iconShowList[index],
-                    size: 38,
+                    size: 30,
                     color: Colors.white,
                   ),
                   Text(
@@ -110,14 +119,15 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                showBottomMenu(context);
+                showBottomMenu(context, typePage[index]);
               },
             )),
       ],
     );
   }
 
-  void showBottomMenu(context) {
+  //底部弹窗显示
+  void showBottomMenu(context, typeName) {
     showModalBottomSheet(
         backgroundColor: Colors.transparent,
         context: context,
@@ -131,113 +141,119 @@ class HomePage extends StatelessWidget {
               )),
               child: Column(
                 children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.only(left: 20, top: 10),
-                        child: ClipOval(
-                          child: Image.asset(
-                            "images/app_logo.jpg",
-                            width: 60,
-                            height: 60,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Container(
-                          child: Text('选择要显示的类别'),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Expanded(
-                    child: ListView(
-                      physics: BouncingScrollPhysics(),
-                      padding: EdgeInsets.only(left: 20, top: 20),
+                  Container(
+                    height: 70,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          Colors.deepPurpleAccent,
+                          Colors.blue[300]
+                        ]),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20))),
+                    child: Row(
                       children: <Widget>[
-                        InkWell(
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 60,
-                            child: Text('页面一'),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 20,
                           ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PageShowSelf()));
-                          },
+                          child: ClipOval(
+                            child: Image.asset(
+                              "images/app_logo.jpg",
+                              width: 60,
+                              height: 60,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
-                        InkWell(
+                        Padding(
+                          padding: EdgeInsets.only(left: 20),
                           child: Container(
-                            alignment: Alignment.center,
-                            height: 60,
-                            child: Text('页面二'),
+                            child: Text('选择要显示的类别'),
                           ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PageLoginCard()));
-                          },
-                        ),
-                        InkWell(
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 60,
-                            child: Text('页面三'),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PageShowSelf()));
-                          },
                         ),
                       ],
                     ),
                   ),
-                  Container(
-                      child: InkWell(
-                    child: Text(
-                      'Flutter GraceFul Demo',
-                      style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.blueAccent,
-                          decoration: TextDecoration.underline),
+                  Expanded(
+                      child: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                      Colors.deepPurpleAccent,
+                      Colors.blue[300]
+                    ])),
+                    child: ListView.builder(
+                      itemCount: typePage.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          leading: Icon(Icons.sentiment_neutral),
+                          title: Text(typeName + "$index"),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        mapShowWidget[typeName][index]));
+                          },
+                        );
+                      },
+                      physics: BouncingScrollPhysics(),
+                      padding: EdgeInsets.only(left: 20, top: 20),
                     ),
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                                title: Text('flutter学习记录'),
-                                content: Container(
-                                  alignment: Alignment.centerLeft,
-                                  height: 60,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        '项目地址:',
-                                        style: TextStyle(fontSize: 16),
-                                      ),
-                                      Text(
-                                        'https://github.com/haibowen/fluter_graceful_demo',
-                                        style: TextStyle(fontSize: 14),
-                                      ),
-                                    ],
-                                  ),
-                                ));
-                          });
-                    },
-                  ))
+                  )),
+                  Container(
+                      alignment: Alignment.center,
+                      width: 600,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          Colors.deepPurpleAccent,
+                          Colors.blue[300]
+                        ]),
+                      ),
+                      child: InkWell(
+                        child: Text(
+                          'Flutter GraceFul Demo',
+                          style: TextStyle(
+                              fontSize: 22,
+                              decoration: TextDecoration.underline),
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return showAlterDialog();
+                              });
+                        },
+                      ))
                 ],
               ),
             ));
   }
+
+  //show Dialog
+  Widget showAlterDialog() {
+    return AlertDialog(
+        title: Text('flutter学习记录'),
+        content: Container(
+          alignment: Alignment.centerLeft,
+          height: 60,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                '项目地址:',
+                style: TextStyle(fontSize: 16),
+              ),
+              Text(
+                'https://github.com/haibowen/fluter_graceful_demo',
+                style: TextStyle(fontSize: 14),
+              ),
+            ],
+          ),
+        ));
+  }
+
+
 }

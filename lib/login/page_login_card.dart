@@ -10,15 +10,15 @@ class PageLoginCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          leading: InkWell(
-            child: Icon(Icons.arrow_back),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          backgroundColor: Colors.deepPurpleAccent,
-        ),
+//        appBar: AppBar(
+//          leading: InkWell(
+//            child: Icon(Icons.arrow_back),
+//            onTap: () {
+//              Navigator.pop(context);
+//            },
+//          ),
+//          backgroundColor: Colors.deepPurpleAccent,
+//        ),
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -149,7 +149,7 @@ class PageLoginCard extends StatelessWidget {
                 ],
               ),
               Container(
-                margin: EdgeInsets.only(top: 10, left: 20),
+                margin: EdgeInsets.only(top: 20, left: 20),
                 child: Row(
                   children: <Widget>[
                     Text('Do you have an account?',

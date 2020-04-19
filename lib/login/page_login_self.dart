@@ -12,14 +12,6 @@ class PageShowSelf extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.deepPurpleAccent,
-            leading: InkWell(
-              child: Icon(Icons.arrow_back),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            )),
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(

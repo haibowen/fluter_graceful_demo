@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutteruidemo/customer_error_page.dart';
 import 'package:flutteruidemo/home_page.dart';
 import 'package:flutteruidemo/user_show.dart';
 import 'package:flutteruidemo/widget_show.dart';
@@ -58,13 +59,17 @@ class PageShowPageState extends State<PageShowPage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
+    //统一错误页面处理
+    ErrorWidget.builder = (FlutterErrorDetails error) {
+      return CustomerErrorPage(error.exceptionAsString());
+    };
     return MaterialApp(
       home: Scaffold(
         body: PageView(
-          onPageChanged: (index){
-
+          onPageChanged: (index) {
             setState(() {
-              _currentIndex=index;
+              _currentIndex = index;
             });
           },
           controller: pageController,
@@ -93,6 +98,7 @@ class PageShowPageState extends State<PageShowPage> {
           ],
         ),
       ),
+
     );
   }
 }
