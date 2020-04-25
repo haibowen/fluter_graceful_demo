@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutteruidemo/animation/animation_hero.dart';
 import 'package:flutteruidemo/login/page_login_normal.dart';
 import 'package:flutteruidemo/login/page_login_offset.dart';
 
+import 'animation/animation_page.dart';
 import 'login/page_login_card.dart';
 import 'login/page_login_self.dart';
 import 'main.dart';
+import 'navigation/navigation_page.dart';
 
 //展示的页面
 List<Widget> pageShowRoute = [
@@ -13,7 +16,7 @@ List<Widget> pageShowRoute = [
   PageLoginCard(),
 ];
 Map<String, List<Widget>> mapShowWidget = {
-  'login': [PageShowSelf(), PageLoginCard(),PageLoginOffset(),PageLoginNormal()]
+  'login': [PageShowSelf(), PageLoginCard(),PageLoginOffset(),PageLoginNormal()],'animation':[AnimationPageOne(),AnimationHero()],'navigation':[NavigationPage()]
 };
 //层叠的背景图片数组
 List<dynamic> backgroundImageList = [

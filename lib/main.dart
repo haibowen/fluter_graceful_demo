@@ -7,7 +7,7 @@ import 'package:flutteruidemo/home_page.dart';
 import 'package:flutteruidemo/user_show.dart';
 import 'package:flutteruidemo/widget_show.dart';
 
-List<dynamic> typePage = ['login', 'center', 'user', 'test', 'show'];
+List<dynamic> typePage = ['login', 'animation', 'navigation', 'test', 'show'];
 
 void main() {
   runApp(MyApp());
