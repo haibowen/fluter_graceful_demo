@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutteruidemo/customer_error_page.dart';
+import 'package:flutteruidemo/login/page_login_normal.dart';
 import 'package:flutteruidemo/login/page_login_offset.dart';
 
 import 'login/page_login_card.dart';
@@ -13,7 +13,7 @@ List<Widget> pageShowRoute = [
   PageLoginCard(),
 ];
 Map<String, List<Widget>> mapShowWidget = {
-  'login': [PageShowSelf(), PageLoginCard(),PageLoginOffset()]
+  'login': [PageShowSelf(), PageLoginCard(),PageLoginOffset(),PageLoginNormal()]
 };
 //层叠的背景图片数组
 List<dynamic> backgroundImageList = [
@@ -235,6 +235,9 @@ class HomePage extends StatelessWidget {
   //show Dialog
   Widget showAlterDialog() {
     return AlertDialog(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0))
+      ),
         title: Text('flutter学习记录'),
         content: Container(
           alignment: Alignment.centerLeft,

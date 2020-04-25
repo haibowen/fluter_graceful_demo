@@ -8,7 +8,7 @@ class PageLoginOffset extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             gradient:
-                LinearGradient(colors: [Colors.blueAccent, Colors.orange])),
+                LinearGradient(colors: [Colors.blueAccent,Colors.cyan, ])),
         child: Stack(
           children: <Widget>[
             Padding(
@@ -28,20 +28,26 @@ class PageLoginOffset extends StatelessWidget {
                     ],
                   ),
                 )),
-            Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    Colors.deepPurpleAccent,
-                    Colors.blue,
-                  ]),
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              margin: EdgeInsets.only(top: 200, left: 1),
-              height: 300,
-              width: 300,
+
+
+            Positioned(
+              left: 10,
+              child: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                      Colors.deepPurpleAccent,
+                      Colors.blue,
+                    ]),
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                margin: EdgeInsets.only(top: 200, left: 1),
+                height: MediaQuery.of(context).size.height/2,
+                width: MediaQuery.of(context).size.width-80,
+              ),
             ),
+
             Positioned(
               top: 220,
-              left: 20,
+              left: 25,
               child: Container(
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
@@ -49,8 +55,8 @@ class PageLoginOffset extends StatelessWidget {
                       Colors.deepPurpleAccent,
                     ]),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
-                height: 300,
-                width: 300,
+                height: MediaQuery.of(context).size.height/2,
+                width: MediaQuery.of(context).size.width-80,
               ),
             ),
             Positioned(
@@ -63,13 +69,13 @@ class PageLoginOffset extends StatelessWidget {
                       Colors.blue,
                     ]),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
-                height: 300,
-                width: 300,
+                height: MediaQuery.of(context).size.height/2,
+                width: MediaQuery.of(context).size.width-80,
               ),
             ),
             Positioned(
               top: 260,
-              left: 60,
+              left: 55,
               child: Container(
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
@@ -77,8 +83,8 @@ class PageLoginOffset extends StatelessWidget {
                       Colors.deepPurpleAccent,
                     ]),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
-                height: 300,
-                width: 300,
+                height: MediaQuery.of(context).size.height/2,
+                width: MediaQuery.of(context).size.width-70,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
