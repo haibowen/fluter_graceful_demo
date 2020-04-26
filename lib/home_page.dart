@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutteruidemo/animation/animation_hero.dart';
 import 'package:flutteruidemo/login/page_login_normal.dart';
 import 'package:flutteruidemo/login/page_login_offset.dart';
+import 'package:flutteruidemo/login/page_login_offset_two.dart';
 
 import 'animation/animation_page.dart';
 import 'login/page_login_card.dart';
@@ -16,7 +17,7 @@ List<Widget> pageShowRoute = [
   PageLoginCard(),
 ];
 Map<String, List<Widget>> mapShowWidget = {
-  'login': [PageShowSelf(), PageLoginCard(),PageLoginOffset(),PageLoginNormal()],'animation':[AnimationPageOne(),AnimationHero()],'navigation':[NavigationPage()]
+  'login': [PageShowSelf(), PageLoginCard(),PageLoginOffset(),PageLoginNormal(),PageLoginOffsetTwo()],'animation':[AnimationPageOne(),AnimationHero()],'navigation':[NavigationPage()]
 };
 //层叠的背景图片数组
 List<dynamic> backgroundImageList = [
@@ -187,7 +188,7 @@ class HomePage extends StatelessWidget {
                       Colors.blue[300]
                     ])),
                     child: ListView.builder(
-                      itemCount: typePage.length,
+                      itemCount: mapShowWidget[typeName].length,
                       itemBuilder: (context, index) {
                         return ListTile(
                           leading: Icon(Icons.sentiment_neutral),

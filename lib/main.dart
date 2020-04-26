@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutteruidemo/customer_error_page.dart';
 import 'package:flutteruidemo/home_page.dart';
+import 'package:flutteruidemo/page_pv/my_observer.dart';
 import 'package:flutteruidemo/user_show.dart';
 import 'package:flutteruidemo/widget_show.dart';
 
