@@ -10,6 +10,8 @@
 <table><tr>
 <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151440.jpg" width="220" height="320" border=0></td>
 <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151433.jpg" width="220" height="320" border=0></td>
+  <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151426.jpg" width="220" height="320" border=0></td>
+  <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151414.jpg" width="220" height="320" border=0></td>
 </tr></table>
 
 <br/>
