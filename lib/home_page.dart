@@ -5,6 +5,7 @@ import 'package:flutteruidemo/login/page_login_normal.dart';
 import 'package:flutteruidemo/login/page_login_offset.dart';
 import 'package:flutteruidemo/login/page_login_offset_two.dart';
 
+import 'animation/animation_hero_route.dart';
 import 'animation/animation_page.dart';
 import 'login/page_login_card.dart';
 import 'login/page_login_self.dart';
@@ -17,7 +18,15 @@ List<Widget> pageShowRoute = [
   PageLoginCard(),
 ];
 Map<String, List<Widget>> mapShowWidget = {
-  'login': [PageShowSelf(), PageLoginCard(),PageLoginOffset(),PageLoginNormal(),PageLoginOffsetTwo()],'animation':[AnimationPageOne(),AnimationHero()],'navigation':[NavigationPage()]
+  'login': [
+    PageShowSelf(),
+    PageLoginCard(),
+    PageLoginOffset(),
+    PageLoginNormal(),
+    PageLoginOffsetTwo()
+  ],
+  'animation': [AnimationPageOne(), AnimationHero(), AnimationHeroRoute()],
+  'navigation': [NavigationPage()]
 };
 //层叠的背景图片数组
 List<dynamic> backgroundImageList = [
@@ -239,9 +248,8 @@ class HomePage extends StatelessWidget {
   //show Dialog
   Widget showAlterDialog() {
     return AlertDialog(
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10.0))
-      ),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10.0))),
         title: Text('flutter学习记录'),
         content: Container(
           alignment: Alignment.centerLeft,
@@ -262,6 +270,4 @@ class HomePage extends StatelessWidget {
           ),
         ));
   }
-
-
 }
