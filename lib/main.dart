@@ -1,28 +1,61 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutteruidemo/customer_error_page.dart';
 import 'package:flutteruidemo/home_page.dart';
-import 'package:flutteruidemo/page_pv/my_observer.dart';
 import 'package:flutteruidemo/user_show.dart';
 import 'package:flutteruidemo/widget_show.dart';
 
+import 'exception_count/exception_count.dart';
+
 List<dynamic> typePage = ['login', 'animation', 'navigation', 'test', 'show'];
 
-void main() {
-  runApp(MyApp());
-  if (Platform.isAndroid) {
-    SystemUiOverlayStyle style = SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
+///页面异常统计 start
+int exceptionCount = 0;
 
-        ///这是设置状态栏的图标和字体的颜色
-        ///Brightness.light  一般都是显示为白色
-        ///Brightness.dark 一般都是显示为黑色
-        statusBarIconBrightness: Brightness.light);
-    SystemChrome.setSystemUIOverlayStyle(style);
-  }
+Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
+  exceptionCount++; //异常的累加次数
+  print("异常的次数为为为$exceptionCount");
+  print("错误信息为"+error);
+
+
+  //接入三方的异常上报 需要开发插件调用原生
+  //FlutterCrashPlugin.postException(error, stackTrace);
 }
+
+Future<Null> main() async {
+  FlutterError.onError = (FlutterErrorDetails details) async {
+    Zone.current.handleUncaughtError(details.exception, details.stack);
+  };
+  runZoned<Future<Null>>(() async {
+    runApp(MyApp());
+    //沉浸式状态栏
+    if (Platform.isAndroid) {
+      SystemUiOverlayStyle style = SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+
+          ///这是设置状态栏的图标和字体的颜色
+          ///Brightness.light  一般都是显示为白色
+          ///Brightness.dark 一般都是显示为黑色
+          statusBarIconBrightness: Brightness.light);
+      SystemChrome.setSystemUIOverlayStyle(style);
+    }
+  }, onError: (error, stackTrace) async {
+    await _reportError(error, stackTrace);
+     print("异常的次数为$exceptionCount");
+    print("错误信息为wwww"+error);
+
+  });
+}
+
+///页面异常统计 end
+
+//void main() {
+//  runApp(MyApp());
+//
+//}
 
 class MyApp extends StatelessWidget {
   @override
@@ -68,6 +101,7 @@ class PageShowPageState extends State<PageShowPage> {
     return MaterialApp(
       home: Scaffold(
         body: PageView(
+          physics: BouncingScrollPhysics(),
           onPageChanged: (index) {
             setState(() {
               _currentIndex = index;
@@ -99,7 +133,6 @@ class PageShowPageState extends State<PageShowPage> {
           ],
         ),
       ),
-
     );
   }
 }

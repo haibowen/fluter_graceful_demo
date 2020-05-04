@@ -26,7 +26,7 @@ class AnimationHero extends StatelessWidget {
           onTap: () {
             Navigator.push(context, PageRouteBuilder(pageBuilder:
                 (BuildContext context, Animation animation,
-                    Animation seconderyAnimation) {
+                    Animation secondAnimation) {
               return FadeTransition(
                 opacity: animation,
                 child: Scaffold(

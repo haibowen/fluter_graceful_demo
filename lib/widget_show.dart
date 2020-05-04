@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'main.dart';
+
 
 class WidgetShow extends StatelessWidget {
   @override
@@ -9,7 +11,7 @@ class WidgetShow extends StatelessWidget {
     return  Material(
       child:Scaffold(
         body:  Container(
-          child: Text('Widget show 页面'),
+          child: Text('Widget show 页面$exceptionCount'),
         ),
       ) ,
     );

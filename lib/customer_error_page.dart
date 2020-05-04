@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+void main(){
+  runApp(CustomerErrorPage(""));
+}
 class CustomerErrorPage extends StatelessWidget {
   final String errorDetails;
   CustomerErrorPage(this.errorDetails);
