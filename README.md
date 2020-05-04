@@ -24,6 +24,9 @@
 </tr></table>
 
 ### 错误页面自定义
+<table><tr>
+  <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/login.jpg" width="220" height="320" border=0></td>
+ </tr></table>
 
 
 
