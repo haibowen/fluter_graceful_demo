@@ -2,9 +2,7 @@
 一个记录学习flutter的demo
 ## app 页面示例
 ### 基于flutter 原有控件实现的登录页面
-<html>
 
-<body>
 
 
 <table><tr>
@@ -26,7 +24,5 @@
 </tr></table>
 
 
-</body>
 
-</html>
 
