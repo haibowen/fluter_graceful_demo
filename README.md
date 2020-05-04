@@ -14,14 +14,14 @@
 
 <br/>
 <table><tr>
-<td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151426.jpg" width="240" height="320" border=0></td>
-<td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151414.jpg" width="240" height="320" border=0></td>
+<td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151426.jpg" width="220" height="320" border=0></td>
+<td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151414.jpg" width="220" height="320" border=0></td>
 </tr></table>
 <br/>
 
 <table><tr>
-<td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151407.jpg" width="240" height="320" border=0></td>
-<td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151448.jpg" width="240" height="320" border=0></td>
+<td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151407.jpg" width="220" height="320" border=0></td>
+<td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151448.jpg" width="220" height="320" border=0></td>
 </tr></table>
 
 
