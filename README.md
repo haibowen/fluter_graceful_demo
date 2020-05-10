@@ -6,7 +6,7 @@
 <table><tr>
  
 <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151440.jpg" width="220" height="320" border=0></td>
- <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151407.jpg" width="220" height="320" border=0></td>
+ <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/1588575725479.gif" width="220" height="320" border=0></td>
 
   <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151426.jpg" width="220" height="320" border=0></td>
   <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/20200425151414.jpg" width="220" height="320" border=0></td>
@@ -30,5 +30,9 @@
 
 ### flutter 路由管理自定义
 https://github.com/haibowen/AgreeRouter
-
+### 动画相关的页面示例
+#### hero动画
+<table><tr>
+  <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/1588575797563.gif" width="220" height="320" border=0></td>
+ </tr></table>
 
