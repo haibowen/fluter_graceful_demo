@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteruidemo/animation/animation_hero.dart';
+import 'package:flutteruidemo/animation/animation_intertwined.dart';
 import 'package:flutteruidemo/login/page_login_normal.dart';
 import 'package:flutteruidemo/login/page_login_offset.dart';
 import 'package:flutteruidemo/login/page_login_offset_two.dart';
@@ -25,7 +26,7 @@ Map<String, List<Widget>> mapShowWidget = {
     PageLoginNormal(),
     PageLoginOffsetTwo()
   ],
-  'animation': [AnimationPageOne(), AnimationHero(), AnimationHeroRoute()],
+  'animation': [AnimationPageOne(), AnimationHero(), AnimationHeroRoute(),AnimationInterWined()],
   'navigation': [NavigationPage()]
 };
 //层叠的背景图片数组

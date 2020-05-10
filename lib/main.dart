@@ -30,10 +30,12 @@ Future<Null> main() async {
   };
   runZoned<Future<Null>>(() async {
     //Flutter app一键置灰的方法
-    runApp(ColorFiltered(
-      colorFilter: ColorFilter.mode(Colors.white, BlendMode.color),
-      child: MyApp(),
-    ));
+//    runApp(ColorFiltered(
+//      colorFilter: ColorFilter.mode(Colors.white, BlendMode.color),
+//      child: MyApp(),
+//    ));
+
+    runApp(MyApp());
     //沉浸式状态栏
     if (Platform.isAndroid) {
       SystemUiOverlayStyle style = SystemUiOverlayStyle(
