@@ -18,8 +18,7 @@ int exceptionCount = 0;
 Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
   exceptionCount++; //异常的累加次数
   print("异常的次数为为为$exceptionCount");
-  print("错误信息为"+error);
-
+  print("错误信息为" + error);
 
   //接入三方的异常上报 需要开发插件调用原生
   //FlutterCrashPlugin.postException(error, stackTrace);
@@ -30,7 +29,11 @@ Future<Null> main() async {
     Zone.current.handleUncaughtError(details.exception, details.stack);
   };
   runZoned<Future<Null>>(() async {
-    runApp(MyApp());
+    //Flutter app一键置灰的方法
+    runApp(ColorFiltered(
+      colorFilter: ColorFilter.mode(Colors.white, BlendMode.color),
+      child: MyApp(),
+    ));
     //沉浸式状态栏
     if (Platform.isAndroid) {
       SystemUiOverlayStyle style = SystemUiOverlayStyle(
@@ -44,9 +47,8 @@ Future<Null> main() async {
     }
   }, onError: (error, stackTrace) async {
     await _reportError(error, stackTrace);
-     print("异常的次数为$exceptionCount");
-    print("错误信息为wwww"+error);
-
+    print("异常的次数为$exceptionCount");
+    print("错误信息为wwww" + error);
   });
 }
 
