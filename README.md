@@ -31,8 +31,13 @@
 ### flutter 路由管理自定义
 https://github.com/haibowen/AgreeRouter
 ### 动画相关的页面示例
-#### hero动画
+#### hero动画 交织动画
 <table><tr>
   <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/1588575797563.gif" width="220" height="320" border=0></td>
- </tr></table>
+ 
+  <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/1589076761136.gif" width="220" height="320" border=0></td>
 
+ </tr></table>
+ 
+### 自定义widget
+https://github.com/haibowen/flutter_graceful_widget
