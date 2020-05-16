@@ -41,3 +41,10 @@ https://github.com/haibowen/AgreeRouter
  
 ### 自定义widget
 https://github.com/haibowen/flutter_graceful_widget
+### 示例如下
+<table><tr>
+  <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/1589610366807.gif" width="220" height="320" border=0></td>
+ 
+  <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/1589076761136.gif" width="220" height="320" border=0></td>
+
+ </tr></table>
