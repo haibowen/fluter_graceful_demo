@@ -69,20 +69,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_graceful_widget:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: d5d7e71f5732a0d55750b5780126114c10e18bd2
+      url: "https://github.com/haibowen/flutter_graceful_widget.git"
+    source: git
+    version: "0.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
-  fluttergracefulwidget:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "39ea2f39c4a22357cdb057a836ecef3b38c7c2d7"
-      url: "https://github.com/haibowen/flutter_graceful_widget.git"
-    source: git
-    version: "0.0.1"
   image:
     dependency: transitive
     description:

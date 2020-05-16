@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:fluttergracefulwidget/button/gf_button.dart';
-import 'package:fluttergracefulwidget/tag/gf_tag.dart';
+import 'package:flutter_graceful_widget/button/gf_button.dart';
+import 'package:flutter_graceful_widget/tag/gf_tag.dart';
 
 import 'main.dart';
 
