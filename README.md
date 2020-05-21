@@ -48,3 +48,7 @@ https://github.com/haibowen/flutter_graceful_widget
   <td><img src="https://github.com/haibowen/fluter_graceful_demo/blob/master/icon/1589076761136.gif" width="220" height="320" border=0></td>
 
  </tr></table>
+ 
+ ### flutter package plugin的开发
+ 
+ ### Android 原生集成Flutter
