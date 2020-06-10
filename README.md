@@ -29,7 +29,7 @@
  </tr></table>
 
 ### flutter 路由管理自定义
-https://github.com/haibowen/AgreeRouter
+https://github.com/haibowen/FlutterRouter
 ### 动画相关的页面示例
 #### hero动画 交织动画
 <table><tr>
